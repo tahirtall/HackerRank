@@ -29,7 +29,7 @@
         Since there are 4 groups:
             \b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b
 
-        https://www.regextester.com/?fam=114925                    -> Created a test envirement at regextester.com. The regex implementation seems to work, but I can't get it compile on the Java IDE.
+        https://www.regextester.com/?fam=114925                  -> Created a test envirement at regextester.com. The regex implementation seems to work, but I can't get it compile on the Java IDE.
 
     TODO:
         "\." is suppose to define existing of a period, however, java IDE's throws error.
