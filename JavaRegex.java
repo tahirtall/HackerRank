@@ -15,7 +15,6 @@
             Ex: 121.234.12.12
 */
 import java.util.Scanner;
-import java.util.Arrays;
 
 
 class JavaRegex{
@@ -84,7 +83,5 @@ class JavaRegex{
             boolean b = isValidIP(s);
             System.out.println(b);
         }
-        input.closed();
-
     }
 }
