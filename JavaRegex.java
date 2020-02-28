@@ -80,10 +80,11 @@ class JavaRegex{
         while(true) {
             System.out.print("Please enter IP: ");
             String s = input.next();
-            if(s.equals("quit")) return;
+            if(s.equals("quit") || s.equals("QUIT") || s.equals("Quit")) return;
             boolean b = isValidIP(s);
             System.out.println(b);
         }
+        input.closed();
 
     }
 }
