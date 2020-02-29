@@ -32,13 +32,11 @@
         https://www.regextester.com/?fam=114925                  -> Created a test envirement at regextester.com. The regex implementation seems to work, but I can't get it compile on the Java IDE.
 
     TODO:
-        "\." is suppose to define existing of a period, however, java IDE's throws error.
+        " " is suppose to define existing of a period, however, java IDE's throws error.
         Find a way to implement above regex to work with below code.
     */
     
-    import java.util.regex.Matcher;
-    import java.util.regex.Pattern;
-    import java.util.Scanner;
+import java.util.Scanner;
 
     class JavaRegex2{
         public static void main(String[] args){
