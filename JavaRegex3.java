@@ -13,9 +13,10 @@ class JavaRegex3 {
     //  s.3.1 -> apperantly, I had to double slash everything.
     // Step 4: now match, duplicate words in a sentence.
     // Step 5: remove the matched words from the belonging sentence.
+    // Step 6: Now print the items with one of the matched words completed.
     
     public static void main(String[] args) {
-        String regex = "\\b(\\w+)\\s\\1\\b";
+        String regex = "\\b(\\w+)(?:\\s+\\1\\b)+";
         String testGroup = "Goodbye bye bye world world world\n"
                     + "Sam went went to to to his business\n"
                     + "Reya is is the the best player in eye eye game\n"
@@ -23,10 +24,10 @@ class JavaRegex3 {
                     + "Hello hello Ab \n"
                     + "love love love\n"
                     + "I love Love to To tO code\n";
-        Pattern p = Pattern.compile(regex, Pattern.CANON_EQ | Pattern.MULTILINE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(regex, Pattern.CANON_EQ | Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(testGroup);
         while(m.find()) {
-            testGroup = testGroup.replaceAll(regex, " ");
+            testGroup = testGroup.replaceAll(m.group(), m.group(1));
         }
         System.out.println(testGroup);
     }
