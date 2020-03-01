@@ -9,9 +9,10 @@ class JavaRegex3 {
     // Step 2: match the two duplicate words.
     //  s.2.1 -> when I try it on a regex tester. the pattern seems to work, but it won't return true here.
     // Step 3: find out why it doesn't match here, but does it on a regex tester website.
+    //  s.3.1 -> Apperantly. I had to double slash everything.
     
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("\b(\\w)+\\s\1\b");
+        Pattern p = Pattern.compile("\\b(\\w+)\\s\\1\\b");
         Matcher m = p.matcher("love love");
         boolean b = m.matches();
 
