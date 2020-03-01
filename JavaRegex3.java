@@ -1,5 +1,6 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Scanner;
 
 
 class JavaRegex3 {
@@ -9,13 +10,20 @@ class JavaRegex3 {
     // Step 2: match the two duplicate words.
     //  s.2.1 -> when I try it on a regex tester. the pattern seems to work, but it won't return true here.
     // Step 3: find out why it doesn't match here, but does it on a regex tester website.
-    //  s.3.1 -> Apperantly. I had to double slash everything.
+    //  s.3.1 -> apperantly, I had to double slash everything.
+    // Step 4: now match, duplicate words in a sentence.
     
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("\\b(\\w+)\\s\\1\\b");
-        Matcher m = p.matcher("love love");
-        boolean b = m.matches();
-
-        System.out.print(b);
+        String regex = "\\b(\\w+)\\s\\1\\b";
+        String testGroup = "Goodbye bye bye world world world"
+                    + "Sam went went to to to his business"
+                    + "Reya is is the the best player in eye eye game"
+                    + "in inthe"
+                    + "Hello hello Ab aB";
+        Pattern p = Pattern.compile(regex, Pattern.CANON_EQ);
+        Matcher m = p.matcher(testGroup);
+        while(m.find()) {
+            System.out.println(m.group(0));
+        }
     }
 }
