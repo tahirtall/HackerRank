@@ -12,18 +12,22 @@ class JavaRegex3 {
     // Step 3: find out why it doesn't match here, but does it on a regex tester website.
     //  s.3.1 -> apperantly, I had to double slash everything.
     // Step 4: now match, duplicate words in a sentence.
+    // Step 5: remove the matched words from the belonging sentence.
     
     public static void main(String[] args) {
         String regex = "\\b(\\w+)\\s\\1\\b";
-        String testGroup = "Goodbye bye bye world world world"
-                    + "Sam went went to to to his business"
-                    + "Reya is is the the best player in eye eye game"
-                    + "in inthe"
-                    + "Hello hello Ab aB";
-        Pattern p = Pattern.compile(regex, Pattern.CANON_EQ);
+        String testGroup = "Goodbye bye bye world world world\n"
+                    + "Sam went went to to to his business\n"
+                    + "Reya is is the the best player in eye eye game\n"
+                    + "in inthe\n"
+                    + "Hello hello Ab \n"
+                    + "love love love\n"
+                    + "I love Love to To tO code\n";
+        Pattern p = Pattern.compile(regex, Pattern.CANON_EQ | Pattern.MULTILINE | Pattern.UNICODE_CASE);
         Matcher m = p.matcher(testGroup);
         while(m.find()) {
-            System.out.println(m.group(0));
+            testGroup = testGroup.replaceAll(regex, " ");
         }
+        System.out.println(testGroup);
     }
 }
