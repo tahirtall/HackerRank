@@ -15,6 +15,8 @@ class JavaRegex3 {
     // Step 5: remove the matched words from the belonging sentence.
     // Step 6: Now print the items with one of the matched words completed.
     
+    // CHALLENGE COMPLETED;
+    
     public static void main(String[] args) {
         String regex = "\\b(\\w+)(?:\\s+\\1\\b)+";
         String testGroup = "Goodbye bye bye world world world\n"
