@@ -19,7 +19,15 @@ Sample Output:
     123
 
 '''
+from __future__ import print_function
 
-if __name__=='__main__`':
-    a = (int(input))
+def printCounter(a):
 
+    n = 1
+    counter = 0
+    for n in range(0,a):
+        counter+=1
+        print(counter, end="")
+
+printCounter(3)
+    
