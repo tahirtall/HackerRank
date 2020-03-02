@@ -2,5 +2,4 @@
 
 Using this REPO to access the code from multiple computer. All the code is for practice purposes.
 
-Java = Gold "\n"
-Python = Bronze 
+Java = Gold    Python = Bronze 
