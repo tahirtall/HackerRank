@@ -17,14 +17,14 @@ import re
 import sys
 
 if __name__ == '__main__':
-    n = 22
+    n = 20
 
 if n%2==1:
     print("Weird")
 else:
     if n in range(2,5):
         print("Not Weird")
-    if n in range(6,20):
+    if n in range(6,21):
         print("Weird")
     if n >= 21:
         print("Not Weird")
