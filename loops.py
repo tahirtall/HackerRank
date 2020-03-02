@@ -19,7 +19,6 @@ Sample Output:
     16
 
 '''
-
 if __name__=='__main__':
     #N = (int(input()))
     N = 5
@@ -27,3 +26,4 @@ if __name__=='__main__':
 for i in range(0,N):
     i = i*i
     print(i)
+
