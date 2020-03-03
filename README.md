@@ -1,6 +1,3 @@
-# testingCode
+# HackerRank
 
-Using this REPO to access the code from multiple computer. All the code is for practice purposes.
-
-Java = Gold
-Python = Bronze 
+Repo for HackerRank Practice Questions.
