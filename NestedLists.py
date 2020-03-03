@@ -33,7 +33,13 @@ Sample Output:
     Harry
 '''
 
-if __name__ == '__main__':
+
+def nestedLists():
+    arr = []
+    # will allow multiple input entry
     for _ in range(int(input())):
         name = input()
         score = float(input())
+        arr.append([name,score])
+
+nestedLists()
