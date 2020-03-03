@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 '''
 Task:
     Given the names and grades for each student in a Physics class of N students, 
@@ -41,5 +43,8 @@ def nestedLists():
         name = input()
         score = float(input())
         arr.append([name,score])
+
+    arr.sort(key=itemgetter(1))
+    
 
 nestedLists()
