@@ -39,6 +39,7 @@ Sample Output:
 def nestedLists():
     arr = []
     arr2 = []
+    temp = []
     # Will allow multiple input entry
     for _ in range(int(input())):
         name = input()
@@ -49,10 +50,15 @@ def nestedLists():
     arr.sort(key=itemgetter(1))
 
     # Assigned the matched names to a new array
-    i = 2
+    i = 1
+    secondLow = arr[1][1]
     while(i < len(arr)):
-        if arr[i][1] == arr[1][1]:
-            arr2.append(arr[i][0])
+        if arr[i][1] == arr[0][1]:
+            arr[i][1] = arr[i+1][1]
+        else:
+            temp.append(arr[i])
+            if(arr[i][1] == temp[0][1]):
+                arr2.append(arr[i][0])
         i+=1
     # sort arr2 array, and then print its elements.
     arr2.sort()
