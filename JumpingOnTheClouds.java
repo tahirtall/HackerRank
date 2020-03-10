@@ -6,20 +6,20 @@ class JumpingOnTheClouds {
     public static void main(String[] args) {
         int[] c = {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 
             1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 
-            1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0};
+            1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0}; 
 
-        int[] d = {0, 0, 1, 0, 0, 1, 0};
-
-        int i=0;
-        int counter = 0;
-        while(i != d.length-1) {
-            if (d[i+2] != 0) {
-                i = i + 1;
+        //int[] c = {0, 0, 0, 0, 1, 0};
+        
+        int counter = 1;
+        for (int i=0; i<c.length-3; i++) {
+            if (c[i+2] == 0) {
+                i = i+1;
+                counter++;
+                continue;
             }
             else {
-                i = i + 2;
+                counter++;
             }
-            counter++;
         }
         System.out.print(counter);
 }
