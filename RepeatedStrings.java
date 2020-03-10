@@ -1,29 +1,46 @@
 class RepeatedStrings {
 
     public static long repeatedStrings(final String s, final long n) {
-        return 1;
-    }
-    public static void main(final String[] args) {
-        String[] gg = new String[1];
-        String[] ggg = new String[10];
-        gg[0] = "aba";
-        ggg[0] = "aba";
+        int result = 0;
+        int counter2 = 0;
+        int counter = 0;
+        int temp = (int)n%(int)s.length();
+        int full = (int)n / (int)s.length();
 
-        while(ggg[0].length() <= 10) {
-            ggg[0] = ggg[0] + gg[0];
+        if(s.length() == 1) {
+            return n;
         }
-
-        char[] charArr = ggg[0].toCharArray();
-
-        int counter = -1;
-        for (int j=0; j<charArr.length; j++) {
-            if(charArr[j] == 'a') {
-                counter++;
+        if ( temp > 0) {
+        
+            // Full
+            for (int j=0; j<s.length(); j++) {
+                if(s.charAt(j) == 'a') {
+                    counter2++;
+                }
             }
+            result = counter2 * full;
+            // Remainder
+            for (int i=0; i<temp; i++) {
+                if(s.charAt(i) == 'a') {
+                    counter++;
+                }
+            }
+            return result + counter;
         }
-        System.out.print(counter);
-
-
-        // abaabaabaabaabaabaabaabaabaaba
+        if (temp == 0) {
+            for (int j=0; j<s.length(); j++) {
+                if(s.charAt(j) == 'a') {
+                    counter2++;
+                }
+            }
+            result = counter2 * (int)n;
+            result = result / s.length();
+            return result;       
+        }
+        return 0;
+    }
+    public static long main(final String[] args) {
+        long n = (long)49382313570;
+        repeatedStrings("epsxyyflvrrrxzvnoenvpegvuonodjoxfwdmcvwctmekpsnamchznsoxaklzjgrqruyzavshfbmuhdwwmpbkwcuomqhiyvuztwvq", n);
     }
 }
