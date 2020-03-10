@@ -1,17 +1,17 @@
 class RepeatedStrings {
 
-    public static long repeatedStrings(final String s, final long n) {
-        int result = 0;
-        int counter2 = 0;
-        int counter = 0;
-        int temp = (int)n%(int)s.length();
-        int full = (int)n / (int)s.length();
+    public static void repeatedStrings(String s, long n) {
+        long result = 0;
+        long counter2 = 0;
+        long counter = 0;
+        long temp = n % (long)s.length();
+        long full = n / (long)s.length();
 
-        if(s.length() == 1) {
-            return n;
-        }
-        if ( temp > 0) {
-        
+        System.out.print("temp: " + temp + "\n");
+        System.out.print("full: " + full + "\n");
+
+        if ( temp > 0) 
+        {
             // Full
             for (int j=0; j<s.length(); j++) {
                 if(s.charAt(j) == 'a') {
@@ -25,22 +25,22 @@ class RepeatedStrings {
                     counter++;
                 }
             }
-            return result + counter;
+            result = result + counter;
         }
-        if (temp == 0) {
+        if (temp == 0) 
+        {
             for (int j=0; j<s.length(); j++) {
                 if(s.charAt(j) == 'a') {
                     counter2++;
                 }
             }
-            result = counter2 * (int)n;
-            result = result / s.length();
-            return result;       
+            result = counter2 * n;
+            result = result / s.length();    
         }
-        return 0;
+        System.out.println("result: " + result);
     }
-    public static long main(final String[] args) {
-        long n = (long)49382313570;
-        repeatedStrings("epsxyyflvrrrxzvnoenvpegvuonodjoxfwdmcvwctmekpsnamchznsoxaklzjgrqruyzavshfbmuhdwwmpbkwcuomqhiyvuztwvq", n);
+
+    public static void main(final String[] args) {
+        repeatedStrings("a", 1000000000000L);
     }
 }
