@@ -9,7 +9,11 @@ class ArrayManupilation {
         for (int i=0; i<queries[0][1]; i++) {
             Arrays.fill(myArr[i], 0, queries[0][0], 0);
         }
-        System.out.print(myArr[0][5] + " ");
+        // now fill them up with the ints from queries
+        for (int j=0; j<queries[0][1]; j++) {
+            Arrays.fill(myArr[j], queries[j+1][0], queries[j+1][1], queries[j+1][2]);
+        }
+        System.out.print(myArr[0][4]);
         return 1;
     }
     public static void main(String[] args) {
