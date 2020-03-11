@@ -1,16 +1,16 @@
 class ArrayManupilation {
     // n - number of elements in the array
     // queries - a two dimensional array of queries where each queries[i] contains three integers, a, b, and k.    
-    public static int arrayManupilation(int n, int[] queries) {
-        // TODO
+    public static int arrayManupilation(int n, int[][] queries) {
+        int[][] myArr = new int[queries[0][1]][queries[0][0]];
         return 1;
     }
     public static void main(String[] args) {
         // input queries
-        int[] arr2D = {
-            1, 5, 3,
-            4, 8, 7,
-            4, 9, 1   
+        int[][] arr2D = {
+            {1, 5, 3},
+            {4, 8, 7},
+            {4, 9, 1}   
         };
         // input n
         int num = 10;
