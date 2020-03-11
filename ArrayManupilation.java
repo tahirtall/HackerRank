@@ -13,8 +13,16 @@ class ArrayManupilation {
         for (int j=0; j<queries[0][1]; j++) {
             Arrays.fill(myArr[j], queries[j+1][0], queries[j+1][1], queries[j+1][2]);
         }
-        System.out.print(myArr[0][4]);
-        return 1;
+        // result will be the container that will hold sum of 2 subarrays inside the for loop
+        int[] result = myArr[0];
+        // one final loop to add all subarrays with eachother
+        for (int k=1; k<myArr.length; k++) {
+            for (int x=0; x<result.length; x++) {
+                result[x] = result[x] + myArr[k][x];
+            }
+        }
+        Arrays.sort(result);
+        return result[queries[0][0]-1];
     }
     public static void main(String[] args) {
         // input queries
@@ -22,7 +30,7 @@ class ArrayManupilation {
             {10, 3},
             {1, 5, 3},
             {4, 8, 7},
-            {4, 9, 1}   
+            {6, 9, 1}   
         };
         // input n
         int num = 10;
