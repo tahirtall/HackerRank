@@ -24,9 +24,17 @@ class TheFundRaisingProblem {
                     studentArr[i][j] = scanner.nextInt();
                 }
             }
-
-
-
+            // setting up the guest tables
+            int[][] guestArr = new int[guestTable][];
+            for (int g=0; g<guestTable; g++) {
+                int guestNum = scanner.nextInt();
+                guestArr[g] = new int[guestNum];
+                for (int gg=0; gg<guestNum; gg++){
+                    guestArr[g][gg] = scanner.nextInt();
+                }
+            }
+            // max number guests a student can approach
+            int max = scanner.nextInt();
         }
     }
 
