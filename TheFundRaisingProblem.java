@@ -5,10 +5,10 @@ import java.util.*;
 import java.util.regex.*;
 
 class TheFundRaisingProblem {
-
+    // Initiating a scanner for the user input.  
     private static final Scanner scanner = new Scanner(System.in);
-
-    static void setUp() {
+    // Gets the input from the user to set up student array and guest array for each test case;
+    static void solve() {
         int caseNum = scanner.nextInt();
         for (int k = 0; k<caseNum; k++) {
             // number of students groups
@@ -33,20 +33,13 @@ class TheFundRaisingProblem {
                     guestArr[g][gg] = scanner.nextInt();
                 }
             }
-            // max number guests a student can approach
+            // maximum number of guests a student can approach
             int max = scanner.nextInt();
-            
+
+            // TODO: I can't figure out how I should be using the arrays I built above to solve the question.
         }
     }
 
-    static void guestTable(int[] generosities) {
-
-    }
-
-    static void solve() {
-        
-
-    }
     public static void main (String[] main) {
        /*  Integer[][] test1 = {
             {1},                                // test[0][0] -> Number of test cases
@@ -59,8 +52,6 @@ class TheFundRaisingProblem {
             {3, 70, 80, 90},                    //  **
             {3}                                 // maximum number of guests a student can reach out to.
         }; */
-
-        setUp();
-
+        solve();
     }
 }
