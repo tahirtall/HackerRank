@@ -6,8 +6,28 @@ import java.util.regex.*;
 
 class TheFundRaisingProblem {
 
+    private static final Scanner scanner = new Scanner(System.in);
+
     static void setUp() {
-        
+        int caseNum = scanner.nextInt();
+        for (int k = 0; k<caseNum; k++) {
+            // number of students groups
+            int m = scanner.nextInt();
+            // number of students in each group.
+            int n = scanner.nextInt();
+            // number of tables for the guests.
+            int guestTable = scanner.nextInt();
+            // setting up the groups and charms for the students.
+            int[][] studentArr = new int[m][n];
+            for (int i=0; i<m; i++) {
+                for (int j=0; j<n; j++) {
+                    studentArr[i][j] = scanner.nextInt();
+                }
+            }
+
+
+
+        }
     }
 
     static void guestTable(int[] generosities) {
@@ -15,7 +35,6 @@ class TheFundRaisingProblem {
     }
 
     static void solve() {
-        List<List<List<Integer>>> crazyArr = new ArrayList<List<List<Integer>>>(1);
         
 
     }
