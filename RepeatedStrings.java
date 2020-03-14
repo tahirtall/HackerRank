@@ -34,7 +34,7 @@ class RepeatedStrings {
                     counter2++;
                 }
             }
-            result = counter2 * n;5
+            result = counter2 * n;
             result = result / s.length();    
         }
         System.out.println("result: " + result);
