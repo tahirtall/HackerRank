@@ -1,11 +1,22 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
 class TheFundRaisingProblem {
+
+    static void setUp() {
+        
+    }
 
     static void guestTable(int[] generosities) {
 
     }
 
     static void solve() {
-
+        List<List<List<Integer>>> crazyArr = new ArrayList<List<List<Integer>>>(1);
+        
 
     }
     public static void main (String[] main) {
@@ -20,5 +31,13 @@ class TheFundRaisingProblem {
             {3, 70, 80, 90},                    //  **
             {3}                                 // maximum number of guests a student can reach out to.
         };
+
+        String[] mn = {"3","3"};
+        int m = Integer.parseInt(mn[0].trim());
+        int n = Integer.parseInt(mn[1].trim());
+
+        int[][] charm = new int[m][n];
+
+
     }
 }
