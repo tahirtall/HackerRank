@@ -8,7 +8,7 @@ class TheFundRaisingProblem {
     // Initiating a scanner for the user input.  
     private static final Scanner scanner = new Scanner(System.in);
     // Gets the input from the user to set up student array and guest array for each test case;
-    static void solve() {
+    static void getInput() {
         int caseNum = scanner.nextInt();
         for (int k = 0; k<caseNum; k++) {
             // number of students groups
@@ -35,9 +35,12 @@ class TheFundRaisingProblem {
             }
             // maximum number of guests a student can approach
             int max = scanner.nextInt();
-
-            // TODO: I can't figure out how I should be using the arrays I built above to solve the question.
         }
+    }
+
+    static void solve() {
+        getInput();
+        System.out.print(max);
     }
 
     public static void main (String[] main) {
