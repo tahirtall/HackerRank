@@ -3,12 +3,13 @@ import java.math.*;
 import java.text.*;
 import java.util.*;
 import java.util.regex.*;
+import java.util.Collection;
 
 class TheFundRaisingProblem {
     // Initiating a scanner for the user input.  
     private static final Scanner scanner = new Scanner(System.in);
     // Gets the input from the user to set up student array and guest array for each test case;
-    static void getInput() {
+    static void solve() {
         int caseNum = scanner.nextInt();
         for (int k = 0; k<caseNum; k++) {
             // number of students groups
@@ -35,12 +36,35 @@ class TheFundRaisingProblem {
             }
             // maximum number of guests a student can approach
             int max = scanner.nextInt();
-        }
-    }
 
-    static void solve() {
-        getInput();
-        System.out.print(max);
+            ArrayList<Integer> newStudentArr = new ArrayList<Integer>();
+            ArrayList<Integer> newGuestArr = new ArrayList<Integer>();
+
+            // Added all elements of studentArr into newStudentArr
+            for (int ii=0; ii<studentArr.length; ii++) {
+                for (int jj=0; jj<studentArr[ii].length; jj++) {
+                    newStudentArr.add(studentArr[ii][jj]);
+                }
+            }
+            // Added all elements of guestArr into newGuestArr
+            for (int kk=0; kk<guestArr.length; kk++) {
+                for (int xx=0; xx<guestArr[kk].length; xx++) {
+                    newGuestArr.add(guestArr[kk][xx]);
+                } 
+            }
+            // Reverse Sort newStudentArr and newGuestArr
+            Collections.sort(newStudentArr, Collections.reverseOrder());
+            Collections.sort(newGuestArr, Collections.reverseOrder());
+            // Duplicate each element in newStudentArr by number of max.
+            ArrayList<Integer> newStudentArr2 = new ArrayList<Integer>(newStudentArr.size() * max);
+            for (int cc=1; cc<=max; cc++) {
+                newStudentArr2.addAll(newStudentArr);
+            }
+            Collections.sort(newStudentArr2, Collections.reverseOrder());
+            // Multiple each elements in the arrays and append them to an int variable
+
+
+        }
     }
 
     public static void main (String[] main) {
