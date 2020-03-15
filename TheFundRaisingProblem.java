@@ -11,6 +11,7 @@ class TheFundRaisingProblem {
     // Gets the input from the user to set up student array and guest array for each test case;
     static void solve() {
         int caseNum = scanner.nextInt();
+        ArrayList<Integer> resultArr = new ArrayList<Integer>();
         for (int k = 0; k<caseNum; k++) {
             // number of students groups
             int m = scanner.nextInt();
@@ -62,8 +63,14 @@ class TheFundRaisingProblem {
             }
             Collections.sort(newStudentArr2, Collections.reverseOrder());
             // Multiple each elements in the arrays and append them to an int variable
-
-
+            int result = 0;
+            for (int vv=0; vv<newGuestArr.size(); vv++) {
+                result = result + (newGuestArr.get(vv) * newStudentArr2.get(vv));
+            }
+            resultArr.add(result);
+        }
+        for (int bb=0; bb<resultArr.size(); bb++) {
+              System.out.println(resultArr.get(bb));
         }
     }
 
