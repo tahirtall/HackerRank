@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 class ArrayManupilation {
     // n - number of elements in the array
@@ -9,15 +11,15 @@ class ArrayManupilation {
 
         // filled the subarrays with 0s
         for (int i=0; i<queries.length; i++) {
-            Arrays.fill(myArr[i], 0, n-1, 0);
+            Arrays.fill(myArr[i], myArr[i][0], myArr[i][n-1], 0);
         }
         // now fill them up with the ints from queries
-        for (int j=0; j<queries.length+1; j++) {
+        for (int j=0; j<queries.length; j++) {
             Arrays.fill(myArr[j], queries[j][0], queries[j][1], queries[j][2]);
         }
         
         // result will be the container that will hold sum of subarrays inside the for loop
-        int[] result = myArr[0];
+        int[] result = new int[queries.length];
         // one final loop to add all subarrays with eachother
         for (int k=1; k<myArr.length; k++) {
             for (int x=0; x<result.length; x++) {
@@ -25,19 +27,17 @@ class ArrayManupilation {
             }
         }
         // sort result array and return it.
-        Arrays.sort(result);
-        return result[n-1];
+        return result[result.length-1];
     }
     public static void main(String[] args) {
         // input queries
         int[][] arr2D = {
-            {2, 6, 8},
-            {3, 5, 7},
-            {1, 8, 1},
-            {5, 9, 15}   
+            {1, 5, 3},
+            {4, 8, 7},
+            {6, 9, 1},   
         };
         // input n
-        int num = 5;
+        int num = 10;
         // function call
         System.out.print(arrayManupilation(num, arr2D) + "\n");
 

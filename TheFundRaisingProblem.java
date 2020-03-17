@@ -12,6 +12,7 @@ class TheFundRaisingProblem {
     static void solve() {
         int caseNum = scanner.nextInt();
         ArrayList<Integer> resultArr = new ArrayList<Integer>();
+
         for (int k = 0; k<caseNum; k++) {
             // number of students groups
             int m = scanner.nextInt();
@@ -26,10 +27,14 @@ class TheFundRaisingProblem {
                     studentArr[i][j] = scanner.nextInt();
                 }
             }
+            boolean isPossible = true;
             // setting up the guest tables
             int[][] guestArr = new int[guestTable][];
             for (int g=0; g<guestTable; g++) {
                 int guestNum = scanner.nextInt();
+                if (guestNum > n) {
+                    isPossible = false;
+                }
                 guestArr[g] = new int[guestNum];
                 for (int gg=0; gg<guestNum; gg++){
                     guestArr[g][gg] = scanner.nextInt();
@@ -37,6 +42,10 @@ class TheFundRaisingProblem {
             }
             // maximum number of guests a student can approach
             int max = scanner.nextInt();
+            if (isPossible == false && max <= 1) {
+                resultArr.add(-1);
+                continue;
+            }
 
             ArrayList<Integer> newStudentArr = new ArrayList<Integer>();
             ArrayList<Integer> newGuestArr = new ArrayList<Integer>();
