@@ -6,17 +6,16 @@ import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class tagContent {
-
-    public static final Scanner scanner = new Scanner(System.in);
+class tagContent {
     public static void printHTML(int n) {
-        boolean matched = true;
+        Scanner scanner = new Scanner(System.in);
+        boolean isValid = true;
         String strTags;
         List<String> result = new ArrayList<String>();
         List<String> posArr = new ArrayList<String>();
         List<String> tags = new ArrayList<String>();
         int counter = 0;
-        while (counter != n) {
+        while (counter < 4) {
             String str = scanner.nextLine();
             Pattern pattern = Pattern.compile("<[^>]*>");
             Matcher matcher = pattern.matcher(str);
@@ -26,20 +25,20 @@ public class tagContent {
             }
             tags.add("end");
             for (int i=0; i<tags.size(); i=i+2) {
-                if(tags.get(i) == "end"){
+                if(tags.get(i).equals("end")){
                     break;
                 }
                 if (!tags.get(i+1).contains("/") || tags.get(i).contains("/")) {
-                    matched = false;
+                    isValid = false;
                     break;
                 }
-                if (!tags.get(i).substring(1,(tags.get(i).length()-2)).equals(tags.get(i+1).substring(2, (tags.get(i+1).length()-2)))){
-                    matched = false;
+                if (tags.get(i).substring(1,(tags.get(i).length()-2)).equals(tags.get(i+1).substring(2,(tags.get(i+1).length()-2))) == false){
+                    isValid = false;
                     break;
                 }
             }
 
-            if (matched == false) {
+            if (isValid == false) {
                 result.add("none");
             }
             else {
@@ -52,13 +51,14 @@ public class tagContent {
                     }
                 }
             }
+            tags.clear();
             counter++;
         }
         for (int k=0; k<result.size(); k++) {
-            System.out.print(result.get(k));
+            System.out.println(result.get(k));
         }
     }
     public static void main(String[] main) {
-        
+        printHTML(4);
     }
 }
