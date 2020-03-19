@@ -21,29 +21,8 @@ class tagContent {
                 tags.add(strTags);
             }
             tags.add("end");
-
-            for (int i=0; i<tags.size(); i++) {
-                if (tags.get(i+1) == "end") {
-                    break;
-                }
-                boolean slash = tags.get(i).contains("/");
-                if(slash == false) {
-                    for (int ii=i+1; ii<tags.size(); ii++) {
-                        boolean slash2 = tags.get(ii).contains("/");
-                        if (slash2 == true) {
-                            String compare1 = tags.get(i).substring(1,(tags.get(i).length()-1));
-                            String compare2 = tags.get(ii).substring(2,(tags.get(ii).length()-1));
-                            if (compare1.equals(compare2)) {
-                                tags.remove(i);
-                                tags.remove(ii);
-                            }
-                        }
-                    }
-                }
-            }
-            if (tags.size() > 1) {
-                isValid = false;
-            }
+            // TODO: I need to iterate through tags array, and compare it's elemets with each other, and be able to check validity of the html tags. If there is a invalid tag,
+            // set isValid to False. If all tags are valid, set isValid to true. 
 
             List<String> posArr = new ArrayList<String>();
             if (isValid == false) {
@@ -66,9 +45,6 @@ class tagContent {
         } 
     }
     public static void main(String[] main) {
-        //printHTML();
-        String aa = "</h1>";
-        String bb = aa.substring(1, (aa.length()-1));
-        System.out.print(aa.contains(bb));
+        printHTML();
     }
 }
