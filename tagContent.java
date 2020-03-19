@@ -10,27 +10,11 @@ public class tagContent {
 
      public static void printHTML() {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        ArrayList<Integer> outputArr = new ArrayList<Integer>();
         List<String> posArr = new ArrayList<String>();
-        for (int i=0; i<n; i++) {
-            String str = scanner.nextLine();
-            Pattern pattern = Pattern.compile("<[^>]*>");
-            Matcher m = pattern.matcher(str);
-            boolean b = m.matches();
-            if (b == true) {
-                String[] splitArr = str.split("<[^>]*>");
-                posArr = Arrays.asList(splitArr);
-            }
-            if (b == false) {
-                posArr.add("invalid");
-            }
-        }
-        for (int ii=0; ii<posArr.size(); ii++) {
-            if (posArr.get(ii).length() > 1) {
-                System.out.println(posArr.get(ii));
-            }
-        }
+        String str = scanner.nextLine();
+        String[] result = str.split("\\<.*?\\>");
+        posArr = Arrays.asList(result);
+        System.out.print(posArr + "\n");
     } 
     public static void main(String[] main) {
         printHTML();
