@@ -25,7 +25,19 @@ public class tagContent {
                 tags.add(strTags);
             }
             tags.add("end");
-
+            for (int i=0; i<tags.size(); i=i+2) {
+                if(tags.get(i) == "end"){
+                    break;
+                }
+                if (!tags.get(i+1).contains("/") || tags.get(i).contains("/")) {
+                    matched = false;
+                    break;
+                }
+                if (!tags.get(i).substring(1,(tags.get(i).length()-2)).equals(tags.get(i+1).substring(2, (tags.get(i+1).length()-2)))){
+                    matched = false;
+                    break;
+                }
+            }
 
             if (matched == false) {
                 result.add("none");
@@ -47,7 +59,6 @@ public class tagContent {
         }
     }
     public static void main(String[] main) {
-        String a = "123456";
-        System.out.print(a.substring(1,5));
+        
     }
 }
