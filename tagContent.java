@@ -10,10 +10,10 @@ class tagContent {
         Scanner scanner = new Scanner(System.in);
         // number of input lines.
         int testCases = Integer.parseInt(scanner.nextLine());
-        boolean isValid = true;
         List<String> result = new ArrayList<String>();
         // Finds all the html tags in given string input. Checks for validity, and add the proper corresponding string to the result arr.
         while (testCases > 0) {
+            boolean isValid = true;
             List<String> tagsStart = new ArrayList<String>();
             List<String> tagsEnd = new ArrayList<String>();
             // stores the current input string
@@ -34,19 +34,19 @@ class tagContent {
                 String strTags2 = matcherEnd.group();
                 tagsEnd.add(strTags2);
             }
-
             List<String> posArr = new ArrayList<String>();
             if (tagsStart.size() != tagsEnd.size()) {
                 result.add("none");
             }
             if (tagsStart.size() == tagsEnd.size()) {
                 for (int ii=0; ii<tagsStart.size(); ii++) {
-                    if (!tagsStart.get(ii).substring(1, tagsStart.get(ii).length() - 1).equals(tagsEnd.get(ii).substring(2, tagsStart.get(ii).length() - 1))) {
+                    if (!tagsStart.get(ii).substring(1).equals(tagsEnd.get(ii).substring(2))) {
+                        isValid = false;
                         result.add("none");
-                        break;
                     }
                 }
-            }else {
+            }
+            if (isValid != false) {
                 String[] splitRegex = str.split("<[^>]*>");
                 posArr = Arrays.asList(splitRegex);
                 for (int j=0; j<posArr.size(); j++) {
@@ -66,5 +66,4 @@ class tagContent {
     public static void main(String[] main) {
         printHTML();
     }
-
 }
