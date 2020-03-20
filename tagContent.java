@@ -5,8 +5,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class tagContent {
-    static void printHTML() {
+public class tagContent {
+    public static void printHTML() {
         Scanner scanner = new Scanner(System.in);
         // number of input lines.
         int testCases = Integer.parseInt(scanner.nextLine());
@@ -35,9 +35,6 @@ class tagContent {
                 tagsEnd.add(strTags2);
             }
             List<String> posArr = new ArrayList<String>();
-            if (tagsStart.size() != tagsEnd.size()) {
-                result.add("none");
-            }
             if (tagsStart.size() == tagsEnd.size()) {
                 for (int ii=0; ii<tagsStart.size(); ii++) {
                     if (!tagsStart.get(ii).substring(1).equals(tagsEnd.get(ii).substring(2))) {
@@ -46,13 +43,14 @@ class tagContent {
                     }
                 }
             }
+
             if (isValid != false) {
+                ArrayList<String> temp2 = new ArrayList<String>();
                 String[] splitRegex = str.split("<[^>]*>");
-                posArr = Arrays.asList(splitRegex);
-                for (int j=0; j<posArr.size(); j++) {
-                    posArr.get(j).trim();
-                    if (posArr.get(j).length() > 1) {
-                        result.add(posArr.get(j));
+                for (int j=0; j<splitRegex.length; j++) {
+                    if (splitRegex[j].length() > 0) {
+                        List<String> temp3 = Arrays.asList(splitRegex[j]);
+                        result.add(temp3.get(0));
                     }
                 }
             }
